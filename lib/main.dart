@@ -1,3 +1,4 @@
+import 'package:chat_app/core/cache_helper/cache_helper.dart';
 import 'package:chat_app/core/utils/routes.dart';
 import 'package:chat_app/features/login/presentation/view_model/otp_cubit/otp_cubit.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -10,6 +11,8 @@ import 'core/utils/colors.dart';
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await CacheHelper.init();
+  print(CacheHelper.getData(key: 'phone'));
   runApp(const MyApp());
 }
 
@@ -25,11 +28,15 @@ class MyApp extends StatelessWidget{
         ],
         child: MaterialApp(
           routes: RoutesManager.routes,
-          initialRoute: RoutesManager.splashRoute,
+          initialRoute: RoutesManager.splashRoute ,
           theme: ThemeData(
               progressIndicatorTheme: ProgressIndicatorThemeData(
               color:ColorsManager.primaryColor,
-            )
+            ),
+            appBarTheme: AppBarTheme(
+              backgroundColor: ColorsManager.primaryColor,
+              elevation: 0,
+            ),
           ),
         ),
       ),

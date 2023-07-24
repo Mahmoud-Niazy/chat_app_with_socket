@@ -1,3 +1,4 @@
+import 'package:chat_app/features/chat_details/presentation/view/chat_details_view.dart';
 import 'package:chat_app/features/enter_your_information/presentation/view/enter_your_information_view.dart';
 import 'package:chat_app/features/login/presentation/view/check_code_view.dart';
 import 'package:chat_app/features/splash/presentation/view/splash_view.dart';
@@ -11,6 +12,8 @@ abstract class RoutesManager {
   static const String checkCodeView = 'checkCodeView' ;
   static const String chatsView = 'ChatsView' ;
   static const String enterYourInformation = 'EnterYourInformation' ;
+  static const String chatDetails = 'chatDetails' ;
+
 
 
 
@@ -20,6 +23,8 @@ abstract class RoutesManager {
     checkCodeView : (context)=>  CheckCodeView(),
     chatsView : (context)=>  ChatsView(),
     enterYourInformation : (context)=>  EnterYourInformationView(),
+    chatDetails : (context)=>  ChatDetailsView(),
+
 
 
 

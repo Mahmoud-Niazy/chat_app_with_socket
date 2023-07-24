@@ -1,4 +1,4 @@
-import 'package:chat_app/core/utils/colors.dart';
+// import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class Loading extends StatelessWidget {
@@ -8,7 +8,7 @@ class Loading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: CircularProgressIndicator(
-        valueColor: new  AlwaysStoppedAnimation<Color>(ColorsManager.primaryColor),
+        // valueColor: new  AlwaysStoppedAnimation<Color>(ColorsManager.primaryColor),
       ),
     );
   }

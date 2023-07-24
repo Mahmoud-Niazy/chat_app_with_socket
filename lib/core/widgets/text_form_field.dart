@@ -6,7 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String label;
-  final IconData prefixIcon;
+  final IconData? prefixIcon;
+  final IconData? suffixIcon;
   final double? borderRadius;
   final String? Function(String?)? validator ;
   final TextEditingController controller ;
@@ -15,10 +16,11 @@ class CustomTextFormField extends StatelessWidget {
    const CustomTextFormField({
     super.key,
     required this.label,
-    required this.prefixIcon,
+     this.prefixIcon,
      this.borderRadius = 15,
     required this.validator,
     required this.controller,
+     this.suffixIcon,
      this.inputType,
   });
 
@@ -44,6 +46,10 @@ class CustomTextFormField extends StatelessWidget {
           ),
           prefixIcon: Icon(
             prefixIcon,
+            color: ColorsManager.primaryColor,
+          ),
+          suffixIcon: Icon(
+            suffixIcon,
             color: ColorsManager.primaryColor,
           ),
           enabledBorder: InputBorder.none,

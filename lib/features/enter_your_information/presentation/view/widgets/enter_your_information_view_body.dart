@@ -1,3 +1,4 @@
+import 'package:chat_app/core/cache_helper/cache_helper.dart';
 import 'package:chat_app/core/functions/navigation.dart';
 import 'package:chat_app/core/utils/colors.dart';
 import 'package:chat_app/core/utils/routes.dart';
@@ -119,7 +120,9 @@ class EnterYourInformationViewBody extends StatelessWidget {
                       BlocConsumer<EnterYourInformationCubit, EnterYourInformationStates>(
                         listener: (context, state) {
                           if(state is UploadUserDataSuccessfullyState){
-                            navigateAndFinish(context: context, page: const ChatsView(), route: RoutesManager.chatsView);
+                            CacheHelper.saveData(key: "phone", value: phone);
+                            navigateAndFinish(context: context, page: ChatsView(),
+                                route: RoutesManager.chatsView);
                           }
                         },
                         builder: (context, state) {

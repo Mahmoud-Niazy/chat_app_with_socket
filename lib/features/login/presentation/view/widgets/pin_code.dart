@@ -1,3 +1,4 @@
+import 'package:chat_app/core/cache_helper/cache_helper.dart';
 import 'package:chat_app/core/functions/navigation.dart';
 import 'package:chat_app/core/utils/routes.dart';
 import 'package:chat_app/features/chats/presentation/view/chats_view.dart';
@@ -41,6 +42,7 @@ class PinCode extends StatelessWidget {
             );
           }
           else{
+            CacheHelper.saveData(key: 'phone', value: phone);
             navigateAndFinish(
               context: context,
               page: const ChatsView(),

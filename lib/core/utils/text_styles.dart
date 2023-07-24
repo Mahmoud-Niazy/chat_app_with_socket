@@ -10,10 +10,21 @@ abstract class TextStylesManager{
     fontSize: 30.sp,
     fontWeight: FontWeight.w300,
   );
+
+  // user name in chat item
   static TextStyle labelLarge20  = TextStyle(
     color : ColorsManager.blackColor,
     fontSize: 20.sp,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w300,
+
+  );
+
+  //phone in drawer
+  static TextStyle labelLarge15  = TextStyle(
+    color : ColorsManager.lightBlack,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w300,
+
   );
 
   //label in TextFormField
